@@ -21,7 +21,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	boolean downPressed = false;
 	boolean leftPressed = false;
 	boolean rightPressed = false;
-
+	ObjectManager manager = new ObjectManager(rocket);
 	public GamePanel(){
 		frameDraw = new Timer(1000/60,this);
 		frameDraw.start();

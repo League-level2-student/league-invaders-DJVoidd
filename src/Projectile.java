@@ -13,4 +13,8 @@ public class Projectile extends GameObject{
 		g.setColor(Color.RED);
 		g.fillRect(x, y, width, height);
 	}
+	void isActive(boolean b) {
+		isActive = b;
+		
+	}
 }

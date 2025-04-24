@@ -15,7 +15,7 @@ public class Alien extends GameObject{
 		g.fillRect(x, y, width, height);
 	}
 	void isActive(boolean b) {
-		
+		isActive = b;
 		
 	}
 }
