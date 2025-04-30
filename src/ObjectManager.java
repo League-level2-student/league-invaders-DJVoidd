@@ -15,12 +15,15 @@ public class ObjectManager {
 			aliens.get(i).update();
 			if(aliens.get(i).y > LeagueInvaders.HEIGHT) {
 				aliens.get(i).isActive(false);
-				aliens.get(i).draw(null);
+			aliens.get(i).draw(null);
 			}
 		}
-		for (int i = 0; i < projectiles.size(); i++) {
+	for (int i = 0; i < projectiles.size(); i++) {
 			projectiles.get(i).draw(null);
 		}
+	}
+	void update() {
+		
 	}
 	void addProjectlie(Projectile projectile) {;
 	projectiles = new ArrayList<>();

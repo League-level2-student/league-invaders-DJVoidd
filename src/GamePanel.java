@@ -22,6 +22,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	boolean leftPressed = false;
 	boolean rightPressed = false;
 	ObjectManager manager = new ObjectManager(rocket);
+	
 	public GamePanel(){
 		frameDraw = new Timer(1000/60,this);
 		frameDraw.start();
@@ -39,7 +40,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		}
 	}
 	void updateMenuState() { 
-
+		manager.addProjectlie(null);
 	}
 	void updateGameState() {  
 		if (upPressed) {
@@ -69,7 +70,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		if(rocket.y<0) {
 			System.out.println("FIX");
 			rocket.y=0;
+			
 		}
+		manager.update();
 	}
 	void updateEndState()  { 
 
@@ -88,7 +91,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	void drawGameState(Graphics g) { 
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
-		rocket.draw(g);
+		manager.draw(g);
 	}
 	void drawEndState(Graphics g)  { 
 		g.setColor(Color.RED);
