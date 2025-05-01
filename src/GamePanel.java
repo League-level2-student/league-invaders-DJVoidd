@@ -13,6 +13,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	final int GAME = 1;
 	final int END = 2;
 	int currentState = MENU;
+	int projX;
+	int projY;
 	Font titleFont = new Font("Arial", Font.PLAIN, 48);
 	Font regText = new Font("Arial", Font.PLAIN, 24);
 	Timer frameDraw;
@@ -22,7 +24,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	boolean leftPressed = false;
 	boolean rightPressed = false;
 	ObjectManager manager = new ObjectManager(rocket);
-	
+	Projectile laser = new Projectile(projX, projY, 10, 5);
 	public GamePanel(){
 		frameDraw = new Timer(1000/60,this);
 		frameDraw.start();
