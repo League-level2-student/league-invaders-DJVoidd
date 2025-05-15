@@ -11,6 +11,11 @@ public class ObjectManager {
 		rocket = new Rocketship(0, 0, 0, 0);
 		aliens = new ArrayList<>();
 		gen = new Random();
+		projectiles = new ArrayList<>();
+		
+	
+	}
+	void update() {
 		for (int i = 0; i < aliens.size(); i++) {
 			aliens.get(i).update();
 			if(aliens.get(i).y > LeagueInvaders.HEIGHT) {
@@ -18,15 +23,12 @@ public class ObjectManager {
 			aliens.get(i).draw(null);
 			}
 		}
-	for (int i = 0; i < projectiles.size(); i++) {
-			projectiles.get(i).draw(null);
+		for (int i = 0; i < projectiles.size(); i++) {
+			projectiles.get(i).update();
 		}
 	}
-	void update() {
-		
-	}
 	void addProjectlie(Projectile projectile) {;
-	projectiles = new ArrayList<>();
+	;
 	projectiles.add(projectile);
 	}
 	void addAlien() {
@@ -34,6 +36,12 @@ public class ObjectManager {
 	}
 	void draw(Graphics g) {
 		rocket.draw(g);
+		for (Projectile projectile : projectiles) {
+			projectile.draw(g);
+		}
+		for (Alien alien : aliens) {
+			alien.draw(g);
+		}
 	}
 	void purgeObjects() {
 		for (int i = 0; i < aliens.size(); i++) {
